@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Conversor de temperaturas entre Celsius, Fahrenheit y Kelvin">
+  <title>Conversor de Temperaturas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+  <section class="card" aria-labelledby="title">
+    <header class="hero">
+      <div class="hero-icon" aria-hidden="true">🌡️</div>
+      <div><span class="eyebrow">Herramienta rápida</span><h1 id="title">Conversor de Temperaturas</h1><p>Convierte automáticamente entre Celsius, Fahrenheit y Kelvin.</p></div>
+    </header>
+    <div class="content">
+      <form id="converter" novalidate>
+        <label for="temperature">Temperatura</label>
+        <div class="input-wrap"><input id="temperature" type="number" step="any" inputmode="decimal" placeholder="Ejemplo: 25" aria-describedby="message"><strong id="inputSymbol">°C</strong></div>
+        <p id="message" class="message" aria-live="polite">Puedes usar valores positivos, negativos o decimales.</p>
+        <div class="units">
+          <div><label for="fromUnit">De</label><select id="fromUnit"><option value="C">Celsius (°C)</option><option value="F">Fahrenheit (°F)</option><option value="K">Kelvin (K)</option></select></div>
+          <button id="swap" class="icon-btn" type="button" title="Intercambiar unidades" aria-label="Intercambiar unidades">⇅</button>
+          <div><label for="toUnit">A</label><select id="toUnit"><option value="F">Fahrenheit (°F)</option><option value="C">Celsius (°C)</option><option value="K">Kelvin (K)</option></select></div>
+        </div>
+        <button id="clear" class="clear" type="button">↻ Limpiar campos</button>
+      </form>
+      <section class="result-card" aria-labelledby="resultLabel">
+        <span id="resultLabel" class="eyebrow muted">Resultado</span>
+        <div id="result" class="result" aria-live="polite"><span class="empty">🌡️<small>El resultado aparecerá aquí</small></span></div>
+        <div class="indicator"><div class="mood"><span id="moodIcon">🌡️</span><strong id="moodText">Esperando temperatura</strong><small id="moodDetail">Introduce un valor</small></div><div class="scale"><i id="marker"></i></div><div class="scale-labels"><span>Frío</span><span>Templado</span><span>Calor</span></div></div>
+      </section>
+    </div>
+    <footer>Conversión automática · Compatible con ordenador, tablet y móvil</footer>
+  </section>
+</main>
+<script src="script.js"></script>
+</body></html>
